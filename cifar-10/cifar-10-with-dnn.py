@@ -8,6 +8,7 @@ class CIFAR10Trainer:
     TITLE = "Train History"
     LEGEND_LOCATION = "upper left"
     ACCURACY_MESSAGE = 'Test accuracy:'
+    LOSS_MESSAGE = 'Test loss:'
     
     def __init__(self):
         # Load CIFAR-10 dataset
@@ -62,6 +63,7 @@ class CIFAR10Trainer:
         # Evaluate the model
         test_loss, test_acc = model.evaluate(self.test_images, self.test_labels, verbose=2)
         print(self.ACCURACY_MESSAGE, test_acc)
+        print(self.LOSS_MESSAGE, test_loss)
         
         self.plot_history(history)
 
