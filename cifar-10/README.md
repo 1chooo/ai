@@ -1,4 +1,4 @@
-# cifar-10 Handwritten Digit Recognition
+# [CIFAR-10 Python](https://www.kaggle.com/datasets/pankrzysiu/cifar10-python)
 
 Author: [1chooo](https://1chooo.com)
 
