@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="zh" xml:lang="zh"></html>
+<html lang="zh" xml:lang="zh">
+
+</html>
 
 <head>
     <meta charset="utf-8">
@@ -7,7 +9,7 @@
 </head>
 
 <body>
-    <!-- # ['credit_history', 'gender', 'married', 'Education', 'Dependents', 'Self_Employed', 'Property_Area','LoanAmount_log','TotalIncome_log'] -->
+    <!-- # ['credit_history', 'gender', 'married', 'education', 'dependents', 'self_employed', 'property_area','LoanAmount_log','TotalIncome_log'] -->
     <h1>客戶基本條件資料輸入</h1>
     <form action="/submit" method="post" enctype="multipart/form-data">
         <label for="credit_history">本行信用紀錄:</label>
@@ -24,31 +26,31 @@
         <input type="radio" id="married" name="married" value="1" {{married_yes}}><label for="married_yes">已婚</label>
         <input type="radio" id="married" name="married" value="0" {{married_no}}><label for="married_no">未婚</label>
         <br><br>
-        <label for="Education">教育狀態:</label>
-        <input type="radio" id="Education" name="Education" value="0" {{Education_Graduate}}><label
-            for="Education_Graduate">畢業</label>
-        <input type="radio" id="Education" name="Education" value="1" {{Education_NotGraduate}}><label
-            for="Education_NotGraduate">肄業/在學中</label>
+        <label for="education">教育狀態:</label>
+        <input type="radio" id="education" name="education" value="0" {{education_graduate}}><label
+            for="education_graduate">畢業</label>
+        <input type="radio" id="education" name="education" value="1" {{education_not_graduate}}><label
+            for="education_not_graduate">肄業/在學中</label>
         <br><br>
-        <label for="Dependents">家庭人數:</label>
-        <select name="Dependents" id="Dependents">
-            <option value="0" {{Dependents_0}}>0</option>
-            <option value="1" {{Dependents_1}}>1</option>
-            <option value="2" {{Dependents_2}}>2</option>
-            <option value="3" {{Dependents_3Plus}}>3+</option>
+        <label for="dependents">家庭人數:</label>
+        <select name="dependents" id="dependents">
+            <option value="0" {{dependents_0}}>0</option>
+            <option value="1" {{dependents_1}}>1</option>
+            <option value="2" {{dependents_2}}>2</option>
+            <option value="3" {{dependents_3_plus}}>3+</option>
         </select>
         <br><br>
-        <label for="Self_Employed">工作類型:</label>
-        <input type="radio" id="Self_Employed" name="Self_Employed" value="0" {{Self_Employed_No}}><label
-            for="Self_Employed_No">上班族</label>
-        <input type="radio" id="Self_Employed" name="Self_Employed" value="1" {{Self_Employed_Yes}}><label
-            for="Self_Employed_Yes">接案工作者</label>
+        <label for="self_employed">工作類型:</label>
+        <input type="radio" id="self_employed" name="self_employed" value="0" {{self_employed_no}}><label
+            for="self_employed_no">上班族</label>
+        <input type="radio" id="self_employed" name="self_employed" value="1" {{self_employed_yes}}><label
+            for="self_employed_yes">接案工作者</label>
         <br><br>
-        <label for="Property_Area">房產位置:</label>
-        <select name="Property_Area" id="Property_Area">
-            <option value="0" {{Property_Area_Rural}}>郊區</option>
-            <option value="1" {{Property_Area_Semiurban}}>半市區</option>
-            <option value="2" {{Property_Area_Urban}}>市區</option>
+        <label for="property_area">房產位置:</label>
+        <select name="property_area" id="property_area">
+            <option value="0" {{property_area_rural}}>郊區</option>
+            <option value="1" {{property_area_semiurban}}>半市區</option>
+            <option value="2" {{property_area_urban}}>市區</option>
         </select>
         <br><br>
         <label for="LoanAmount">借貸金額:(單位-美金千元)</label>

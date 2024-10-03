@@ -39,50 +39,50 @@ def submit():
         else:
             married_no = 'checked'
 
-        #Education
-        Education_Graduate = ''
-        Education_NotGraduate = ''
-        if int(form_data['Education']) == 0:
-            Education_Graduate = 'checked'
+        # education
+        education_graduate = ''
+        education_not_graduate = ''
+        if int(form_data['education']) == 0:
+            education_graduate = 'checked'
         else:
-            Education_NotGraduate = 'checked'
+            education_not_graduate = 'checked'
 
-        #Dependents
-        Dependents_0 = ''
-        Dependents_1 = ''
-        Dependents_2 = ''
-        Dependents_3Plus = ''
-        if int(form_data['Dependents']) == 0:
-            Dependents_0 = 'selected'
-        elif int(form_data['Dependents']) == 1:
-            Dependents_1 = 'selected'
-        elif int(form_data['Dependents']) == 2:
-            Dependents_2 = 'selected'
+        # dependents
+        dependents_0 = ''
+        dependents_1 = ''
+        dependents_2 = ''
+        dependents_3_plus = ''
+        if int(form_data['dependents']) == 0:
+            dependents_0 = 'selected'
+        elif int(form_data['dependents']) == 1:
+            dependents_1 = 'selected'
+        elif int(form_data['dependents']) == 2:
+            dependents_2 = 'selected'
         else:
-            Dependents_3Plus = 'selected'
+            dependents_3_plus = 'selected'
 
-        #Self_Employed
-        Self_Employed_No = ''
-        Self_Employed_Yes = ''
-        if int(form_data['Self_Employed']) == 0:
-            Self_Employed_No = 'checked'
+        # self_employed
+        self_employed_no = ''
+        self_employed_yes = ''
+        if int(form_data['self_employed']) == 0:
+            self_employed_no = 'checked'
         else:
-            Self_Employed_Yes = 'checked'
+            self_employed_yes = 'checked'
 
-        # Property_Area
-        Property_Area_Rural = ''
-        Property_Area_Semiurban = ''
-        Property_Area_Urban = ''
-        if int(form_data['Property_Area']) == 0:
-            Property_Area_Rural = 'selected'
-        elif int(form_data['Property_Area']) == 1:
-            Property_Area_Semiurban = 'selected'
+        # property_area
+        property_area_rural = ''
+        property_area_semiurban = ''
+        property_area_urban = ''
+        if int(form_data['property_area']) == 0:
+            property_area_rural = 'selected'
+        elif int(form_data['property_area']) == 1:
+            property_area_semiurban = 'selected'
         else:
-            Property_Area_Urban = 'selected'
+            property_area_urban = 'selected'
 
         """
         for testing purpose
-        ['credit_history','gender','married','Education','Dependents','Self_Employed','Property_Area','LoanAmount_log','TotalIncome_log']
+        ['credit_history','gender','married','education','dependents','self_employed','property_area','LoanAmount_log','TotalIncome_log']
         model_pretrained.predict([[0,1,1,0,3,1,2,np.log(150),np.log(5000)]])
         """
         
@@ -90,10 +90,10 @@ def submit():
             form_data['credit_history'],
             form_data['gender'],
             form_data['married'],
-            form_data['Education'],
-            form_data['Dependents'],
-            form_data['Self_Employed'],
-            form_data['Property_Area'],
+            form_data['education'],
+            form_data['dependents'],
+            form_data['self_employed'],
+            form_data['property_area'],
             np.log(int(form_data['LoanAmount'])),
             np.log(int(form_data['TotalIncome']))
         ]])
@@ -102,10 +102,10 @@ def submit():
             form_data['credit_history'],
             form_data['gender'],
             form_data['married'],
-            form_data['Education'],
-            form_data['Dependents'],
-            form_data['Self_Employed'],
-            form_data['Property_Area'],
+            form_data['education'],
+            form_data['dependents'],
+            form_data['self_employed'],
+            form_data['property_area'],
             np.log(int(form_data['LoanAmount'])),
             np.log(int(form_data['TotalIncome']))
         ]])
@@ -121,26 +121,26 @@ def submit():
         # reload html
         return render_template(
             'form.html', 
-            credit_history_yes = credit_history_yes, 
-            credit_history_no = credit_history_no, 
-            gender_male = gender_male, 
-            gender_female = gender_female, 
-            married_yes = married_yes, 
-            married_no = married_no, 
-            Education_Graduate = Education_Graduate, 
-            Education_NotGraduate = Education_NotGraduate, 
-            Dependents_0 = Dependents_0,
-            Dependents_1 = Dependents_1,
-            Dependents_2 = Dependents_2,
-            Dependents_3Plus = Dependents_3Plus,
-            Self_Employed_No = Self_Employed_No,
-            Self_Employed_Yes = Self_Employed_Yes,
-            Property_Area_Rural = Property_Area_Rural,
-            Property_Area_Semiurban = Property_Area_Semiurban,
-            Property_Area_Urban = Property_Area_Urban,
-            LoanAmount = form_data['LoanAmount'],
-            TotalIncome = form_data['TotalIncome'],
-            prediction = prediction
+            credit_history_yes=credit_history_yes, 
+            credit_history_no=credit_history_no, 
+            gender_male=gender_male, 
+            gender_female=gender_female, 
+            married_yes=married_yes, 
+            married_no=married_no, 
+            education_graduate=education_graduate, 
+            education_not_graduate=education_not_graduate, 
+            dependents_0=dependents_0,
+            dependents_1=dependents_1,
+            dependents_2=dependents_2,
+            dependents_3_plus=dependents_3_plus,
+            self_employed_no=self_employed_no,
+            self_employed_yes=self_employed_yes,
+            property_area_rural=property_area_rural,
+            property_area_semiurban=property_area_semiurban,
+            property_area_urban=property_area_urban,
+            LoanAmount=form_data['LoanAmount'],
+            TotalIncome=form_data['TotalIncome'],
+            prediction=prediction
         )
 
 
