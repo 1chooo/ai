@@ -15,29 +15,29 @@ def submit():
     if request.method == 'POST':
         form_data = request.form
 
-        #Credit_History
-        Credit_History_Yes = ''
-        Credit_History_No = ''
-        if int(form_data['Credit_History']) == 1:
-            Credit_History_Yes = 'checked'
+        # credit_history
+        credit_history_yes = ''
+        credit_history_no = ''
+        if int(form_data['credit_history']) == 1:
+            credit_history_yes = 'checked'
         else:
-            Credit_History_No = 'checked'
+            credit_history_no = 'checked'
 
-        #Gender
-        Gender_Male = ''
-        Gender_Female = ''
-        if int(form_data['Gender'])== 1:
-            Gender_Male = 'checked'
+        # gender
+        gender_male = ''
+        gender_female = ''
+        if int(form_data['gender'])== 1:
+            gender_male = 'checked'
         else:
-            Gender_Female = 'checked'
+            gender_female = 'checked'
 
-        #Married
-        Married_Yes = ''
-        Married_No = ''
-        if int(form_data['Married']) == 1:
-            Married_Yes = 'checked'
+        # married
+        married_yes = ''
+        married_no = ''
+        if int(form_data['married']) == 1:
+            married_yes = 'checked'
         else:
-            Married_No = 'checked'
+            married_no = 'checked'
 
         #Education
         Education_Graduate = ''
@@ -82,14 +82,14 @@ def submit():
 
         """
         for testing purpose
-        ['Credit_History','Gender','Married','Education','Dependents','Self_Employed','Property_Area','LoanAmount_log','TotalIncome_log']
+        ['credit_history','gender','married','Education','Dependents','Self_Employed','Property_Area','LoanAmount_log','TotalIncome_log']
         model_pretrained.predict([[0,1,1,0,3,1,2,np.log(150),np.log(5000)]])
         """
         
         result = model_pretrained.predict([[
-            form_data['Credit_History'],
-            form_data['Gender'],
-            form_data['Married'],
+            form_data['credit_history'],
+            form_data['gender'],
+            form_data['married'],
             form_data['Education'],
             form_data['Dependents'],
             form_data['Self_Employed'],
@@ -99,9 +99,9 @@ def submit():
         ]])
 
         result_proba = model_pretrained.predict_proba([[
-            form_data['Credit_History'],
-            form_data['Gender'],
-            form_data['Married'],
+            form_data['credit_history'],
+            form_data['gender'],
+            form_data['married'],
             form_data['Education'],
             form_data['Dependents'],
             form_data['Self_Employed'],
@@ -121,12 +121,12 @@ def submit():
         # reload html
         return render_template(
             'form.html', 
-            Credit_History_Yes = Credit_History_Yes, 
-            Credit_History_No = Credit_History_No, 
-            Gender_Male = Gender_Male, 
-            Gender_Female = Gender_Female, 
-            Married_Yes = Married_Yes, 
-            Married_No = Married_No, 
+            credit_history_yes = credit_history_yes, 
+            credit_history_no = credit_history_no, 
+            gender_male = gender_male, 
+            gender_female = gender_female, 
+            married_yes = married_yes, 
+            married_no = married_no, 
             Education_Graduate = Education_Graduate, 
             Education_NotGraduate = Education_NotGraduate, 
             Dependents_0 = Dependents_0,
