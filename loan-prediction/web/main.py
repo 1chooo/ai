@@ -11,7 +11,7 @@ def formPage():
 
  
 @app.route("/submit", methods=['GET', 'POST'])
-def submit():
+def submit() -> str:
     if request.method == 'POST':
         form_data = request.form
 
@@ -82,7 +82,7 @@ def submit():
 
         """
         for testing purpose
-        ['credit_history','gender','married','education','dependents','self_employed','property_area','LoanAmount_log','TotalIncome_log']
+        ['credit_history','gender','married','education','dependents','self_employed','property_area','loan_amount_log','total_income_log']
         model_pretrained.predict([[0,1,1,0,3,1,2,np.log(150),np.log(5000)]])
         """
         
@@ -94,8 +94,8 @@ def submit():
             form_data['dependents'],
             form_data['self_employed'],
             form_data['property_area'],
-            np.log(int(form_data['LoanAmount'])),
-            np.log(int(form_data['TotalIncome']))
+            np.log(int(form_data['loan_amount'])),
+            np.log(int(form_data['total_income']))
         ]])
 
         result_proba = model_pretrained.predict_proba([[
@@ -106,8 +106,8 @@ def submit():
             form_data['dependents'],
             form_data['self_employed'],
             form_data['property_area'],
-            np.log(int(form_data['LoanAmount'])),
-            np.log(int(form_data['TotalIncome']))
+            np.log(int(form_data['loan_amount'])),
+            np.log(int(form_data['total_income']))
         ]])
 
         print(f'Result:{result}')
@@ -138,8 +138,8 @@ def submit():
             property_area_rural=property_area_rural,
             property_area_semiurban=property_area_semiurban,
             property_area_urban=property_area_urban,
-            LoanAmount=form_data['LoanAmount'],
-            TotalIncome=form_data['TotalIncome'],
+            loan_amount=form_data['loan_amount'],
+            total_income=form_data['total_income'],
             prediction=prediction
         )
 

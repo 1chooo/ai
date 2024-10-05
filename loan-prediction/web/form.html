@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <!-- # ['credit_history', 'gender', 'married', 'education', 'dependents', 'self_employed', 'property_area','LoanAmount_log','TotalIncome_log'] -->
+    <!-- # ['credit_history', 'gender', 'married', 'education', 'dependents', 'self_employed', 'property_area','loan_amount_log','total_income_log'] -->
     <h1>客戶基本條件資料輸入</h1>
     <form action="/submit" method="post" enctype="multipart/form-data">
         <label for="credit_history">本行信用紀錄:</label>
@@ -53,10 +53,10 @@
             <option value="2" {{property_area_urban}}>市區</option>
         </select>
         <br><br>
-        <label for="LoanAmount">借貸金額:(單位-美金千元)</label>
-        <input type="text" id="LoanAmount" name="LoanAmount" value="{{LoanAmount}}"><br><br>
-        <label for="TotalIncome">每月收入(申請者+共同申請者):(單位-美金)</label>
-        <input type="text" id="TotalIncome" name="TotalIncome" value="{{TotalIncome}}"><br><br>
+        <label for="loan_amount">借貸金額:(單位-美金千元)</label>
+        <input type="text" id="loan_amount" name="loan_amount" value="{{loan_amount}}"><br><br>
+        <label for="total_income">每月收入(申請者+共同申請者):(單位-美金)</label>
+        <input type="text" id="total_income" name="total_income" value="{{total_income}}"><br><br>
         <input type="submit" value="submit">
     </form>
     <br>
